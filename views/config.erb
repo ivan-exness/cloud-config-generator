@@ -1,7 +1,8 @@
 #cloud-config
 
 hostname: rancher-node-<%= digest[0...8] %>
-
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrzzrIo9f4SccWk/tYMB0CaI9WqvSuAXJDPPEe/GHt3bl5NBQNANJODlQevflST0o0lQhAKKk8PXvDkLVJ0Y4omEzXQKh+R8yxi5FPV1jC3j7cV/QJ9bTWGaPaj7fE/G+MVJ9pvwLyBN2jQtSPTV/yNdK7FRwx1QbK8wTiFdrgLm5MXmrHRbg+kdWo1TFRqs/enJND4Yw3JQAjActn6ZNtm0d700fIt3q8D2khE5Pb3g3YOzyjXKmY86uTdt1wEUQoiZmTBLC+FNvcszu6vkGL5r1aYtB4FU+0JuV33hP6JLRpJL13QTFP+1j8STgKPz3leWqYXQNR7iKK+ctaF4NV ivan.skiridomov@master.rancho.exness.local
 rancher:
   services:
     rancher-agent-exness:
