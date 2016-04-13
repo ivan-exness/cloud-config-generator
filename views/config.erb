@@ -1,6 +1,7 @@
 #cloud-config
 
 rancher:
+  hostname: rancher-node-<%= digest[0...8] %>
   services:
     rancher-agent-exness:
       image: rancher/agent:latest
