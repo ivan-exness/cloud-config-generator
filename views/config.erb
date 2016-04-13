@@ -1,7 +1,8 @@
 #cloud-config
 
+hostname: rancher-node-<%= digest[0...8] %>
+
 rancher:
-  hostname: rancher-node-<%= digest[0...8] %>
   services:
     rancher-agent-exness:
       image: rancher/agent:latest
@@ -9,6 +10,7 @@ rancher:
       privileged: true
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
+      environment:
+        CATTLE_AGENT_IP: <%= ip %>
     environment:
       CATTLE_HOST_LABELS: env=dev&region=cyprus
-      CATTLE_AGENT_IP: <%= ip %>
