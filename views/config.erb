@@ -5,13 +5,13 @@ ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrzzrIo9f4SccWk/tYMB0CaI9WqvSuAXJDPPEe/GHt3bl5NBQNANJODlQevflST0o0lQhAKKk8PXvDkLVJ0Y4omEzXQKh+R8yxi5FPV1jC3j7cV/QJ9bTWGaPaj7fE/G+MVJ9pvwLyBN2jQtSPTV/yNdK7FRwx1QbK8wTiFdrgLm5MXmrHRbg+kdWo1TFRqs/enJND4Yw3JQAjActn6ZNtm0d700fIt3q8D2khE5Pb3g3YOzyjXKmY86uTdt1wEUQoiZmTBLC+FNvcszu6vkGL5r1aYtB4FU+0JuV33hP6JLRpJL13QTFP+1j8STgKPz3leWqYXQNR7iKK+ctaF4NV ivan.skiridomov@master.rancho.exness.local
 rancher:
   services:
-    rancher-agent-exness:
+    rancher-agent-somedomain:
       image: rancher/agent:latest
-      command: https://rancho.exness.io/v1/scripts/81425E279BE0AEA23805:1460642400000:WQsvTYkuhrZbQNwSvYPq12n79U
+      command: https://rancho.somedomain.com/v1/scripts/81425E279BE0AEA23805:1460642400000:WQsvTYkuhrZbQNwSvYPq12n79U
       privileged: true
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
       environment:
         CATTLE_AGENT_IP: <%= ip %>
     environment:
-      CATTLE_HOST_LABELS: env=dev&region=cyprus
+      CATTLE_HOST_LABELS: env=dev&region=usa
