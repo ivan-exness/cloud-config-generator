@@ -64,4 +64,19 @@ initrd ${base-url}/initrd
 boot
 ```
 
+run sinatra application
 
+sinatra.yml:
+```
+sinatra:
+    image: erikap/ruby-sinatra
+    restart: always
+    volumes:
+      - /home/ivan.skiridomov/volumes/cloud-config-generator:/usr/src/app
+    environment:
+      - MAIN_APP_FILE=generator.rb
+```
+
+```
+docker-compose -f sinatra.yml up -d
+```
